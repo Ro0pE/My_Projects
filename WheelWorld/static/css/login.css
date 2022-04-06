@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Press+Start+2P&display=swap');
+
+
+.test_inputs {
+
+  font-size: 20px;
+  color: #ffffff;
+  text-shadow:
+  0 0 10px rgb(245, 0, 0),
+  0 0 21px rgb(235, 35, 0);
+}
+
+.testing {
+  position: relative;
+  left:600px;
+  bottom:220px;
+  font-size: 22px;
+  color: #ff0000;
+  text-shadow:
+  0 0 10px rgb(206, 29, 23),
+  0 0 21px rgb(235, 94, 0);
+}
+
+label{
+  color: #00b900;
+  text-shadow:
+  0 0 10px rgb(23, 206, 38),
+  0 0 21px rgb(0, 235, 90);
+}
+.infoText {
+    color: #00b900;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+
+}
+.neonText {
+  position: relative;
+  right:100px;
+  margin-top: 20px;
+  font-family: 'Bangers', cursive;
+  color: rgb(252, 252, 252);
+  text-shadow:
+      0 0 7px rgb(92, 83, 83),
+      0 0 10px #fff,
+      0 0 21px rgb(0, 235, 90),
+      0 0 42px rgb(0, 235, 90),
+      0 0 82px rgb(2, 202, 19);
+}
+.app-name {
+  position: relative;
+  left:50px;
+  font-family: 'Bangers', cursive;
+  font-size: 170px;
+
+}
+input[type=text], [type=password] {
+  margin-top: 10px;
+  width: 200px;
+  height: 22px;
+  background-color: #2d332d;
+}
+.password1 {
+  margin-left: 42px;
+}
+.loginButton { /*login button*/
+  margin-top: 20px;
+  width: 130px;
+  height: 30px;
+  background-color: #2d332d;
+  color: #00b900;
+  text-shadow:
+  0 0 10px rgb(23, 206, 38),
+  0 0 21px rgb(0, 235, 90);
+  font-size: 17px;
+}
+.loginButton:hover {
+  color: #fafafa;
+  text-shadow:
+  0 0 10px rgb(23, 206, 38),
+  0 0 21px rgb(0, 235, 90);
+  font-size: 17px;
+  background-color: #1a1b1a;
+
+}
+.createAccountButton { /*create an account button*/
+  margin-top: 10px;
+  width: 170px;
+  height: 30px;
+  background-color: #2d332d;
+  color: #00b900;
+  text-shadow:
+  0 0 10px rgb(23, 206, 38),
+  0 0 21px rgb(0, 235, 90);
+  font-size: 17px;
+}
+.createAccountButton:hover {
+  color: #fafafa;
+  text-shadow:
+  0 0 10px rgb(23, 206, 38),
+  0 0 21px rgb(0, 235, 90);
+  font-size: 17px;
+  background-color: #1a1b1a;
+
+}
+
+
+
+body {
+  margin: auto;
+  max-width: 45em;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  background: rgb(0, 0, 0);
+  background-color: #000000;
+  background-image: url("car-tire-black-background-picjumbo-com.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}  
+
+h1, h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+  
+h1 {
+    font-size: 4.6rem;
+}
+  
+h2 {
+    font-size: 1.8rem;
+}
+
+.container {
+  margin-top: 20vh;
+}
+
+p[type='error']{
+  color: #b90000;
+  text-shadow:
+  0 0 10px rgb(1, 8, 2),
+  0 0 21px rgb(255, 255, 255);
+  font-size: 17px;
+}
+p[type='succes']{
+  color: #00b90f;
+  text-shadow:
+  0 0 10px rgb(1, 8, 2),
+  0 0 21px rgb(255, 255, 255);
+  font-size: 17px;
+}
+
+.login_header {
+  position: relative;
+  right: 316px;
+  top: 20px;
+  color: rgb(255, 255, 255);
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px rgb(0, 0, 0),
+      0 0 21px rgb(0, 235, 90);
+
+
+}

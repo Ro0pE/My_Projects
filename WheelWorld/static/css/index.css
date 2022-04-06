@@ -1,0 +1,883 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Press+Start+2P&display=swap');
+
+.bottom {
+  margin-bottom: 20px;
+}
+@keyframes animation {
+  0%   {color:rgb(255, 255, 255); left:0px; top:0px;}
+  25%  {color:rgb(2, 2, 2); left:200px; top:25px;}
+  50%  {color:rgb(239, 243, 239); left:300px; top:50px;}
+  75%  {color:rgb(0, 0, 0); left:150px; top:25px;}
+  100% {color:rgb(255, 255, 255); left:0px; top:0px;}
+}
+.app_name_position {
+  position: relative;
+  right:550px;
+
+}
+
+.app-name {
+    position: relative;
+    font-family: 'Bangers', cursive;
+    margin-top: 30px;
+    font-size: 160px;
+    animation:infinite;
+    animation-duration:20s;
+    animation-name: animation;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: rgb(252, 252, 252);
+    text-shadow:
+        0 0 7px rgb(92, 83, 83),
+        0 0 10px #fff,
+        0 0 21px rgb(0, 235, 90),
+        0 0 42px rgb(0, 235, 90),
+        0 0 82px rgb(2, 202, 19);
+  
+  }
+.logged_company_name {
+    position: relative;
+    left:800px;
+    bottom:100px;
+}
+
+.forms {
+    font-family: 'Courier New', Courier, monospace;
+    margin-right: 10px;
+    height:300px;
+}
+.add_clients_form {
+    position: relative;
+    right:550px;
+    bottom:120px;
+    width: 600px;
+}
+.create_new_storage_form {
+    position: relative;
+    bottom:340px;
+    
+}
+
+.add_tires_form {
+    position: relative;
+    bottom:560px;
+    left:630px;
+
+  
+}
+.active_slot_table{
+    width: 450px;
+    margin-bottom: 10px;
+}
+.tables {
+    font-family: 'Courier New', Courier, monospace;
+    margin-right: 10px;
+    height:300px;
+
+}
+.clients_table {
+    padding-left: 10px;
+    position: relative;
+    right:600px;
+    bottom:190px;
+    width: 820px;
+
+}
+.tires_table {
+    position: relative;
+    width: 845px;
+    bottom:200px;
+    right:580px;
+
+}
+.storages {
+  display: inline;
+}
+
+.storages_table {
+    position: relative;
+    bottom:480px;
+    left:700px;
+    width: 590px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+
+}
+.fix_storage_name {
+    position: sticky;
+    font-size: 14px;
+}
+
+.fix_storage_name_button {
+    color: #75f3f3;
+    text-shadow:
+    0 0 10px rgb(39, 129, 136),
+    0 0 12px rgb(0, 83, 116),
+    0 0 14px rgb(4, 20, 41),
+    0 0 16px rgb(0, 12, 116);
+    font-size: 17px;
+    background-color: #2d332d;
+    height: 100%;
+    width: 100%;
+
+}
+
+
+.storage_info {
+    position: sticky;
+    margin: 0px 0 0 0x;
+    width: 340px;
+
+
+  
+}
+
+.small_info_txt {
+    text-transform: uppercase;
+    font-weight: 200;
+    color: #00b900;
+    position: relative;
+    font-size: 20px;
+    margin-left: 20px;
+    color: rgb(255, 255, 255);
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px rgb(0, 0, 0),
+        0 0 21px rgb(0, 235, 90);
+
+}
+.empty_slot {
+    position: relative;
+    top:50px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #00b900;
+    font-size: 19px;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+
+}
+.active_storage_slot_info {
+    position: relative;
+    height: 50px;
+    width: 500px;
+  
+}
+.storage_header{
+    text-transform: uppercase;
+    color: #75f3f3;
+    font-weight: 300;
+    text-shadow:
+    0 0 10px rgb(39, 129, 136),
+    0 0 12px rgb(0, 83, 116),
+    0 0 14px rgb(4, 20, 41),
+    0 0 16px rgb(0, 12, 116),
+    0 0 16px rgb(0, 12, 116),
+    0 0 16px rgb(0, 79, 116);
+    font-size: 30px;
+    max-width: 200px;
+
+}
+
+.headers {
+    text-transform: uppercase;
+    max-width: 300;
+    font-weight: 200;
+    color: #00b900;
+    position: relative;
+    right:15px;
+    font-size: 30px;
+    margin-left: 20px;
+    color: rgb(255, 255, 255);
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px rgb(0, 0, 0),
+        0 0 21px rgb(0, 235, 90);
+}
+
+button {
+    width: 150px;
+    height: 30px;
+    color: #00b900;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 17px;
+    background-color: #2d332d;
+}
+button[value="delete_client"] {
+  width: 100%;
+  height: 100%;
+  color: #f50404;
+
+}
+button[value="delete"] {
+    width: 100%;
+    height: 100%;
+    color: #f50404;
+
+}
+button[value="hide"]{
+    width: 60px;
+    height: 25px;
+}
+input[value="Lastname"]{
+    min-width: 200px;
+}
+input[value="Firstname"]{
+    min-width: 150px;
+}
+
+
+
+.log_out {
+    position: relative;
+    bottom:1310px;
+    right:510px;
+}
+
+label{
+    color: #00b900;
+    font-size: 19px;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+  }
+.infoText {
+      color: #00b900;
+      text-shadow:
+      0 0 10px rgb(23, 206, 38),
+      0 0 21px rgb(0, 235, 90);
+  
+  }
+.styled_header {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #00b900;
+    margin-top: 30px;
+    position: relative;
+    right:105px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: rgb(252, 252, 252);
+    text-shadow:
+        0 0 7px rgb(92, 83, 83),
+        0 0 10px #fff,
+        0 0 21px rgb(0, 235, 90),
+        0 0 42px rgb(0, 235, 90),
+        0 0 82px rgb(2, 202, 19);
+  }
+  html {
+    height: 100%;
+  }
+  body {
+    margin: auto;
+    max-width: 45em;
+    font-family: 'Courier New', Courier, monospace;
+    background: rgb(0, 0, 0);
+    background-color: #000000;
+    /*background-image: url("car-tire-black-background-picjumbo-com.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    height: 100%;
+  
+  }  
+  .testailua{
+    width: 1022px;
+  }
+
+    
+  
+  .container {
+    margin-top: 20vh;
+  }
+  .clients {
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    margin-left: 10px;
+ 
+
+
+  }
+
+  .addClients {
+      margin-left: 20px;
+  }
+
+  .sort-button-id {
+    width:50px;
+}  
+.sort-button {
+    width:220px;
+}
+      tr:nth-child(odd) {
+        color: #00b900;
+        text-shadow:
+        0 0 10px rgb(23, 206, 38),
+        0 0 15px rgb(0, 0, 0);
+        font-size: 16px;
+        background-color: #2d332d;
+        }
+
+      tr:nth-child(even) {
+        color: #00b900;
+        text-shadow:
+        0 0 10px rgb(23, 206, 38),
+        0 0 15px rgb(0, 0, 0);
+        font-size: 16px;
+        background-color: #0e130e;
+        }
+    
+  
+
+
+
+.tires {
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    margin-right: 10px;
+    height:200px;
+
+}
+
+
+
+.give_licenceplate {
+
+    background-color: #000000;
+    color:#26f726;
+    height: 20px;
+    font-size: 15px;
+
+}
+.give_licenceplate:hover {
+    background-color: #2d332d;
+}
+.give_storage_name:hover {
+    background-color: #2d332d;
+}
+.give_storage_slot:hover {
+    background-color: #2d332d;
+}
+.give_storage_name {
+    background-color: #000000;
+    color:#26f726;
+    height: 20px;
+    font-size: 15px;
+
+}
+.give_storage_slot {
+    position: relative;
+    right: 2px;
+    background-color: #000000;
+    color:#26f726;
+    height: 20px;
+    font-size: 15px;
+}
+.tires_radio_button {
+    background-color: #000000;
+    color:#26f726;
+    height: 20px;
+    font-size: 15px;
+
+}
+.add-tires-button {
+    position: relative;
+    color: #00b900;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 17px;
+    background-color: #2d332d;
+}
+.add-tires-button:hover{
+    color: #fafafa;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 17px;
+    background-color: #1a1b1a;
+
+}
+
+  .sticky-header {
+    position: sticky;
+    position: -webkit-sticky;
+    height: 15px;
+    top: 0; 
+    color: #ffffff;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    background-color: #2d332d;
+  }
+  .sticky-header_slot {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0; 
+    font-size: 19px;
+    color: #ffffff;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    background-color: #2d332d;
+  }
+
+
+.input_button {
+    color: #00b900;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 15px;
+    background-color: #2d332d;
+
+  }
+  .input_button:hover {
+    color: #fafafa;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 15px;
+    background-color: #1a1b1a;
+
+  }
+  .input_button_delete_client {
+    color: #00b900;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 15px;
+    background-color: #2d332d;
+    width: 70px;
+
+  } 
+   .input_button_delete_client:hover {
+    color: #fafafa;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 15px;
+    background-color: #1a1b1a;
+
+  }
+  .input_button_delete {
+    color: #00b900;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 15px;
+    background-color: #2d332d;
+    width: 40px;
+
+  }
+
+  .input_button_tires {
+    color: #00b900;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 15px;
+    background-color: #2d332d;
+    width: 100%;
+
+  }
+  .input_button_tires:hover {
+    color: #fafafa;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 15px;
+    background-color: #1a1b1a;
+
+  }
+
+  .input_button_storage {
+    color: #00b900;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 15px;
+    background-color: #2d332d;
+    width: 120px;
+  }
+
+  .input_button_storage:hover {
+    color: #fafafa;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 15px;
+    background-color: #1a1b1a;
+
+
+  }
+  .input_button_storage_delete {
+    width: 60px;
+    color: #00b900;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 15px;
+    background-color: #2d332d;
+  
+  }
+  .input_button_storage_delete:hover {
+    width: 60px;
+    color: #fafafa;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 15px;
+    background-color: #1a1b1a;
+  
+  }
+
+
+
+
+  .storage_button{
+    color: #00b97b;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 17px;
+    background-color: #2d332d;
+    width:250px;
+
+  }
+  .storage_button:hover{
+    color: #fafafa;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 17px;
+    background-color: #1a1b1a;
+  }
+
+
+
+  button {
+    color: #00b900;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 17px;
+    background-color: #2d332d;
+    z-index: 10 !important;
+  }
+  button:hover {
+    color: #fafafa;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 17px;
+    background-color: #1a1b1a;
+
+  }
+  
+  .table-scroll {
+    overflow:auto;  
+    margin-top:20px;
+    max-height: 350px;
+    
+  }
+
+  .table-scroll::-webkit-scrollbar:hover {
+    background-color:#eaf868;
+    
+}
+
+  .table-scroll::-webkit-scrollbar {
+    width: 12px;
+    background-color:#26f726;
+    
+}
+.table-scroll::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgb(0, 0, 0);
+}
+
+
+.logout-button {
+    position: relative;
+    left:800px;
+    bottom:220px;
+
+
+}
+
+
+.add_clients_form input[type=text]:focus {
+    border: 3px solid #26f726;
+  }
+
+.clients_firstname {
+    position: relative;
+    left:30px;
+    background-color: #000000;
+    color:#26f726;
+    height: 20px;
+    font-size: 15px;
+
+}
+.clients_lastname {
+    position: relative;
+    left:42px;
+    background-color: #000000;
+    color:#26f726;
+    height: 20px;
+    font-size: 15px;
+
+}
+.clients_licenceplate {
+    height: 20px;
+    position: relative;
+    right:4px;
+    background-color: #000000;
+    color:#26f726;
+    font-size: 15px;
+}
+
+.clients_licenceplate:hover{
+    background-color: #2d332d;
+}
+.clients_firstname:hover{
+    background-color: #2d332d;
+}
+.clients_lastname:hover{
+    background-color: #2d332d;
+}
+
+
+
+
+/*  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border: 1px solid #26f726;
+    font-size: 15px;
+    -webkit-text-fill-color: #26f726;;
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+*/
+
+
+
+.create_storage_name {
+    position: relative;
+    left:20px;
+    background-color: #000000;
+    color:#26f726;
+    height: 20px;
+    font-size: 15px;
+
+}
+.create_storage_name:hover {
+    background-color: #2d332d;
+
+}
+.create_storage_width {
+    height: 20px;
+    position: relative;
+    left:9px;
+    background-color: #000000;
+    color:#26f726;
+    font-size: 15px;
+}
+
+.create_storage_width:hover{
+    background-color: #2d332d;
+}
+.create_storage_height {
+    position: relative;
+    right:3px;
+    background-color: #000000;
+    color:#26f726;
+    height: 20px;
+    font-size: 15px;
+
+}
+.create_storage_height:hover{
+    background-color: #2d332d;
+}
+
+
+
+.show {
+    color: #00b900;
+}
+
+  .column {
+    float: left;
+    width: 31px;
+    height: 28px;
+    margin-right:5px;
+    padding-left: 8px;
+    display: grid;
+
+  }
+
+  .row {
+      position: relative;
+      width: 470px;
+      font-size: 1px;
+  }
+
+  .storage_slot_button_taken {
+    width: 50px;
+    margin-top: 10px;
+    color: #000000;
+    text-shadow:
+    0 0 10px rgb(155, 36, 36),
+    0 0 21px rgb(216, 0, 235);
+    font-size: 17px;
+    background-color: #27bb19;
+
+  }
+
+
+  .storage_slot_button_free {
+    width: 50px;
+    margin-top: 10px;
+    color: #000000;
+    text-shadow:
+    0 0 10px rgb(199, 219, 21),
+    0 0 21px rgb(0, 235, 51);
+    font-size: 17px;
+    background-color: #dd120b;
+
+  }
+  .storage_slot_button_free:hover {
+    color: #fafafa;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 17px;
+    background-color: #1a1b1a;
+
+  }
+  .storage_slot_button_taken:hover {
+    color: #fafafa;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 17px;
+    background-color: #1a1b1a;
+
+  }
+  .storage_slot_button:hover {
+    color: #fafafa;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 17px;
+    background-color: #1a1b1a;
+  }
+
+
+
+
+.delete_button {
+    position: relative;
+    color: #8d0909;
+    text-shadow:
+    0 0 10px rgb(255, 255, 255),
+    0 0 21px rgb(247, 19, 3);
+    font-size: 17px;
+    background-color: #2d332d;
+
+
+}
+
+.hide_storage_button:hover{
+    color: #fafafa;
+    text-shadow:
+    0 0 10px rgb(23, 206, 38),
+    0 0 21px rgb(0, 235, 90);
+    font-size: 17px;
+    background-color: #1a1b1a;
+}
+.company_name{
+    font-size: 46px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: rgb(252, 252, 252);
+    text-shadow:
+        0 0 7px rgb(92, 83, 83),
+        0 0 10px #fff,
+        0 0 21px rgb(235, 0, 184),
+        0 0 42px rgb(235, 161, 0),
+        0 0 82px rgb(241, 19, 3);
+
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+p[type='error']{
+    color: #b90000;
+    text-shadow:
+    0 0 10px rgb(1, 8, 2),
+    0 0 21px rgb(255, 255, 255);
+    font-size: 25px;
+    max-width: 500px;
+  }
+  p[type='succes']{
+    color: #00b90f;
+    text-shadow:
+    0 0 10px rgb(1, 8, 2),
+    0 0 21px rgb(255, 255, 255);
+    font-size: 25px;
+    max-width: 500px;
+  }
+  .notification {
+      position: relative;
+      bottom:100px;
+      width: 500px;
+  }
+  .empty_notification {
+    font-size: 25px;
+  }
+
+.bottom_fix {
+  padding-bottom: 180px;
+}
+
+  .waviy {
+    position: relative;
+    -webkit-box-reflect: below -8px linear-gradient(transparent, rgba(8, 160, 66, 0.2));
+    font-size: 60px;
+    top:100px;
+  }
+  .waviy span {
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    display: inline-block;
+
+    color: rgb(252, 252, 252);
+    text-shadow:
+        0 0 7px rgb(92, 83, 83),
+        0 0 10px #fff,
+        0 0 21px rgb(0, 235, 90),
+        0 0 42px rgb(0, 235, 90),
+        0 0 82px rgb(2, 202, 19);
+    text-transform: uppercase;
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+    
+  }
+  @keyframes waviy {
+    0%,40%,100% {
+      transform: translateY(0)
+    }
+    20% {
+      transform: translateY(-20px)
+    }
+  }

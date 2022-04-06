@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+<h1 class="neonText"> Welcome to the <span class="app-name">WheelWorld!</span> </h1>
+
+
+<div class="notification">
+    {% for category,message in get_flashed_messages(with_categories=true) %}
+    {% if category == 'succes' %}
+    <p type="succes"> {{ message }}</p>
+    {% else %}
+    <p type="error"> {{ message }}</p>
+    {% endif %}
+    {% endfor %}
+</div>
+
+<h2 class="login_header"> Login  </h2>
+
+<h4> {{session.company}} </h4>
+<form action="/login" method="POST">
+        <label> Company </label>
+        <input type="text" name="company"> </input>
+        <br>
+        <label> Password </label>
+        <input type="password" name="password"> </input>
+        <br>
+        <input class="loginButton" type="submit" value="Login">
+
+</form>
+
+<a href="/createAccount"><button class="createAccountButton"> Create an account </button></a>
+<div class="testing">
+    <p> For testing </p>
+    <p> Company name: <span class="test_inputs"> Wheels </span></p>
+    <p> Password: <span class="test_inputs"> aaa </span></p>
+    </div>
+
+</body>

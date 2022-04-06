@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>WheelWorld</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script>
+                document.addEventListener("DOMContentLoaded", function(event) { 
+                var scrollpos = localStorage.getItem('scrollpos');
+                if (scrollpos) window.scrollTo(0, scrollpos);
+                });
+                window.onbeforeunload = function(e) {
+                localStorage.setItem('scrollpos', window.scrollY);
+                };
+        </script>   
+</head>
+<body>
+
+        <div class="header">              
+        <h1 class="app_name_position"><span class="app-name">WheelWorld</span></h1>
+        <h2 class="logged_company_name"> <span class="company_name"> {{ session.company}}</span> </h2>
+        <div class="logout-button">
+        <a href="/logout"><button>Log out</button></a>
+        </div>
+</div>
+<div class="notification">
+        {% for category,message in get_flashed_messages(with_categories=true) %}
+            {% if message %}
+                {% for category,message in get_flashed_messages(with_categories=true) %}
+                {% if category == 'succes_client' %}
+                        <p type="succes"> {{ message }}</p>
+                {% elif category == 'error_client' %}
+                        <p type="error"> {{ message }}</p>
+                {% endif %}
+                {% endfor %}   
+                {% for category,message in get_flashed_messages(with_categories=true) %}
+                {% if category == 'succes_storages' %}
+                        <p type="succes"> {{ message }}</p>
+                {% elif category == 'error_storages' %}
+                        <p type="error"> {{ message }}</p>
+                {% endif %}
+                {% endfor %}
+                {% for category,message in get_flashed_messages(with_categories=true) %}
+                {% if category == 'succes_tires' %}
+                        <p type="succes"> {{ message }}</p>
+                {% elif category == 'error_tires' %}
+                        <p type="error"> {{ message }}</p>
+                {% endif %}
+                {% endfor %}
+        {% else %}          
+        {% endif %}
+        {% endfor %} 
+        {% if get_flashed_messages(with_categories=true) == [] %}     
+                <h2 class="empty_notification"> superhiddenmessage </h2>     
+        {% endif %}  
+</div>
+
+        {% if session.company %}   
+                <div class="logged_in">
+                 <div class="forms">
+                  <div class="add_clients_form">                               
+                   <h3 class="headers"> Add a new client </h3>                                                      
+                    <form action="/addClients" method="POST">
+                        <label>Firstname</label>
+                        <input class="clients_firstname" type="text" name="firstname" maxlength="15"></input> 
+                        <br>
+                        <label>Lastname</label>
+                        <input class="clients_lastname" type="text" name="lastname" maxlength="20"></input> 
+                        <br>
+                        <label>Licenceplate</label>
+                        <input class="clients_licenceplate" type="text" name="licenceplate" style="text-transform:uppercase" maxlength="8"></input> 
+                        <br>
+                        <br>
+                        <button><input type="hidden" type="submit" value="Add a new client"></input> Add a new client </button>
+                        <input type="hidden" name="csrf_token" value="{{session.csrf_token}}">
+                        <br>  
+                   </form>     
+                   </div>                   
+                   <div class="create_new_storage_form">
+                    <h3 class="headers">Create a new storage </h3>
+                     <form action="/createStorage" method="POST">          
+                         <label>Storage name</label>
+                         <input class="create_storage_name uppercase" type="text" minlength="1" maxlength="8" name="storagename">
+                         <br>
+                         <label>Storage width</label>
+                         <input class="create_storage_width" type="number" min="1" max="10" name="storagewidth">
+                         <br>
+                         <label>Storage height</label>
+                         <input class="create_storage_height" type="number" min="1" max="10" name="storageheight">
+                         <br>
+                         <br>
+                         <button><input type="hidden"  type="submit" value="Create storage">Create a storage</button>
+                         <input type="hidden" name="csrf_token" value="{{session.csrf_token}}">  
+                         <br>   
+                    </form >                    
+                   </div>              
+                   <div class="add_tires_form">
+                    <h3 class="headers">Add tires to the storage</h3>          
+                     <form action="/addTires" method="POST">
+                         <label>Licenceplate</label>
+                         <input class="give_licenceplate" style="text-transform:uppercase" type="text" name="licenceplate">
+                         <br>
+                         <label>Storage name</label>
+                         <input class="give_storage_name uppercase" type="text" name="storage_name">
+                         <br>
+                         <label>Storage slot </label>
+                         <input class="give_storage_slot uppercase" type="text" name="storageslot">
+                         <br>
+                         <label>Tire type:</label>
+                         <input class="tires_radio_button" type="radio" name="tiretype" value="Summer tire" checked>
+                         <label class="tires_radio_button" for="summer tire"> Summer tire</label>
+                         <input class="tires_radio_button" type="radio" name="tiretype" value="Winter tire (no studds)">
+                         <label class="tires_radio_button" for="Winter tire (no studds)"> Winter tire (no studds)</label> 
+                         <input class="tires_radio_button" type="radio" name="tiretype" value="Studded tire">
+                         <label class="tires_radio_button" for="Studded tire">  Studded tire</label> 
+                         <br>
+                         <label>Tire condition:</label>
+                         <input class="tires_radio_button" type="radio" name="condition" value="Good" checked> 
+                         <label class="tires_radio_button" for="Good"> Good</label> 
+                         <input class="tires_radio_button" type="radio" name="condition" value="Avarage"> 
+                         <label class="tires_radio_button" for="Avarage">Avarage</label> 
+                         <input class="tires_radio_button" type="radio" name="condition" value="Bad"> 
+                         <label class="tires_radio_button" for="Bad">Bad</label> 
+                         <br> 
+                         <br> 
+                         <input type="hidden" name="check" value="name_is_ok"> </input>
+                         <button><input type="hidden" type="submit" value="Add tires to storage">Add tires</button>
+                         <input type="hidden" name="csrf_token" value="{{session.csrf_token}}">          
+                    </form>    
+                   </div>
+                 </div>
+               </div>
+
+                <div class="tables">
+                 <div class="clients">
+                  <div class="clients_table">
+                   <h3 class="headers" > Client list</h3>          
+                    <div class="table-scroll">
+                         <table border = 1>
+                         <form action="/sort_clients" method="GET">
+                         <td class="sticky-header"><input class="input_button" type="submit" name="sort_clients" value="ID"></td>
+                         <td class="sticky-header"><input class="input_button" type="submit" name="sort_clients" value="Firstname"></td>
+                         <td class="sticky-header"><input class="input_button" type="submit" name="sort_clients" value="Lastname"></td>
+                         <td class="sticky-header"><input class="input_button" type="submit" name="sort_clients" value="Licenceplate"></td>
+                         <td class="sticky-header"><input class="input_button" type="submit" name="sort_clients" value="Storage slot"></td>
+                         <td class="sticky-header"><input class="input_button" type="submit" name="sort_clients" value="Storage name"></td>     
+                         </form>  
+                         <td class="sticky-header"><input class="input_button_delete_client" type="button" name="Delete" value="Delete"></td>      
+                         {% for row in clients %}
+                          <tr>
+                                <th> {{row.id}} </th>
+                                <th> {{row.firstname}} </th>
+                                <th> {{row.lastname}} </th>
+                                <th> {{row.licenceplate}} </th>
+                                {% if row.storage_slot == None%}
+                                        <th> - </th>
+                                {% else %}
+                                        <th> {{row.storage_slot}} </th>
+                                {% endif %}
+                                {% if row.storage_name == None%}                              
+                                        <th> - </th>
+                                        <th>
+                                                <form action="/delete_client" method="POST">
+                                                        <button value="delete_client">
+                                                        <input type="hidden" type="submit" value={{row.id}} name="id"></input>
+                                                        <input type="hidden" type="submit" value={{row.storage_slot}} name="slot"></input>
+                                                        <input type="hidden" type="submit" value={{row.storage_name}} name="storage"></input>X</button>                                                  
+                                                        <input hidden value={{row.id}} name="id"></input>
+                                                </form>
+                                        </th> 
+                                {% elif row.storage_name != None%}
+                                        <th class="fix_name uppercase"> {{row.storage_name}} </th>
+                                        <th>
+                                                <form action="/delete_client" method="POST">
+                                                        <button value="delete_client">
+                                                        <input type="hidden" type="submit" value={{row.id}} name="id"></input>
+                                                        <input type="hidden" type="submit" value={{row.storage_slot}} name="slot"></input>
+                                                        <input type="hidden" type="submit" value={{row.storage_name}} name="storage"></input>X</button>
+                                                        <input hidden value={{row.id}} name="id"></input>
+                                                </form>
+                                        </th>           
+                                {% endif %}
+                         </tr>
+                        {% endfor %}
+                         </table>
+                   </div>
+                  </div>
+                 </div>
+                 <div class="tires"> 
+                  <div class="tires_table">
+                   <h3 class="headers"> Tires in the storages</h3> 
+                    <div class="table-scroll">
+                     <table border = 1>
+                        <form action="/sort_tires" method="GET">
+                                <td class="sticky-header"><input class="input_button_tires" type="submit" name="sort_tires" value="Owner"></td>
+                                <td class="sticky-header"><input class="input_button_tires" type="submit" name="sort_tires" value="Licenceplate"></td>
+                                <td class="sticky-header"><input class="input_button_tires" type="submit" name="sort_tires" value="Tire type"></td>
+                                <td class="sticky-header"><input class="input_button_tires" type="submit" name="sort_tires" value="Condition"></td>
+                                <td class="sticky-header"><input class="input_button_tires" type="submit" name="sort_tires" value="Storage slot"></td>
+                                <td class="sticky-header"><input class="input_button_tires" type="submit" name="sort_tires" value="Storage name"></td>
+                                </form>  
+                        {% for tire in tires%}
+                                <tr>
+                                        <th> {{tire.lastname}} </th>
+                                        <th> {{tire.licenceplate}} </th>
+                                        <th class="tiretype"> {{tire.tiretype}} </th>
+                                        <th> {{tire.condition}} </th>
+                                        <th> {{tire.storage_slot}} </th>
+                                        <th class="fix_name uppercase"> {{tire.storage_name}} </th>
+                                </tr>    
+                        {% endfor %}
+                     </table>
+                    </div>
+                  </div>
+                 </div> 
+                 <div class="waviy">
+                        <span style="--i:1">Y</span>
+                        <span style="--i:2">O</span>
+                        <span style="--i:3">U</span>
+                        <span style="--i:4">R</span>
+                        <span></span>
+                        <span style="--i:5">A</span>
+                        <span style="--i:6">D</span>
+                        <span style="--i:7">S</span>
+                        <span></span>
+                        <span style="--i:8">?</span>           
+                 </div>
+                  <div class="bottom_fix">
+                  </div>        
+                </div>
+                <div class="storages">
+                 <div class="storages_table">
+                  <h3 class="headers"> Storages </h3>                   
+                   <div class="table-scroll">
+                    <table border = 1>   
+                        <form action="/sort_storages" method="GET">  
+                                <td class="sticky-header"><input class="input_button_storage" type="submit" name="sort_storages" value="Id"></td>
+                                <td class="sticky-header"><input class="input_button_storage" type="submit" name="sort_storages" value="Storage name"></td>
+                                <td class="sticky-header"><input class="input_button_storage" type="submit" name="sort_storages" value="Free space"></td>
+                                <td class="sticky-header"><input class="input_button_storage" type="submit" name="sort_storages" value="Total space"></td>
+                                <td class="sticky-header"><input class="input_button_storage_delete" type="button" name="sort_storages" value="Delete"></td>
+                        </form>
+                        {% for storage in storages %}
+                         <tr>
+                                <th> {{storage.id}} </th>
+                                <th>
+                                <form action="/show_storage" method="POST">
+                                        <button class="fix_storage_name_button">
+                                        <input type="hidden" class="input_button_storage_info" type="submit" name="show_storage" value="{{storage.storage_name}}">
+                                        <span class="fix_name uppercase">{{storage.storage_name}}</span>
+                                        </input>
+                                        </button>
+                                </form>
+                                </th>
+                                <th> {{storage.free_space}} </th>
+                                <th> {{storage.total_space}} </th>
+                                <th>
+                                <form action='/delete_storage' method="POST">
+                                        <button value="delete"><input type="hidden" type="submit" value={{slot_info.storage_slot}} name="delete"></input>X</button>
+                                <input hidden value={{storage.storage_name}} name="storage_name"></input>
+                                </form>
+                                </th> 
+                         </tr>    
+                        {% endfor %}
+                    </table>
+                   </div>
+                   <div class="show_storage_info">
+                        <div class="storage_info">
+                        {% if slot_info == None%}
+                              {% if storage_name != None %}
+                                      <h3 class="storage_header fix_name uppercase"> {{storage_name}}</h3>
+                                      <form action="/close_storage" method="GET">
+                                              <button value="hide"><input type="hidden" type="submit" name="Hide" value="Hide">Hide</input></button>  
+                                      </form>         
+                                       <div class="row">
+                                         {% for item in storage_info %}
+                                          <div class="column">
+                                           {% if item.status == false %}
+                                            <form action="/show_slot_info" method="POST">
+                                                      <input class="storage_slot_button_taken" type="submit" name="slot_name" value={{item_storage_slot}} {{item.storage_slot}}> </input>
+                                                      <input type="hidden" class="storage_slot_button_taken" type="submit" name="storage_name" value={{storage_name}} > </input>
+                                                      <input type="hidden" class="storage_slot_button_taken" type="submit" name="id" value={{item.tire_id}}> </input>
+                                           </form>  
+                                           {% else %} 
+                                            <form action="/show_slot_info" method="POST">
+                                                      <input class="storage_slot_button_free" type="submit" name="slot_name" value={{item_storage_name}} {{item.storage_slot}}> </input>
+                                                      <input type="hidden" class="storage_slot_button_taken" type="submit" name="storage_name" value={{storage_name}}>  </input>
+                                                      <input type="hidden" class="storage_slot_button_taken" type="submit" name="id" value={{item.tire_id}}>  </input>
+                                            </form>                                     
+                                           {% endif %}
+                                         </div>
+                                         {% endfor %} 
+                                       </div>
+                              {% elif add_slot_name %}
+                              <div class="empty_slot">
+                               <p>Slot is empty </p>
+                               <p>SLOT:<span class="small_info_txt">{{add_slot_name}}</span> in STORAGE:<span class="small_info_txt fix_name">{{add_storage_name}}</span> </p>                    
+                              </div>                   
+                              {% else %}
+                               <p> </p>
+                              {% endif%}
+                              </div>
+                         {% else %}                
+                              <div class="active_storage_slot_info">         
+                               <h3 class="storage_header fix_name">{{storage_name}} {{slot_info.storage_slot}}</h3>
+                                <div>
+                                 <table class="active_slot_table" border = 1>          
+                                      <td class="sticky-header_slot">Firstname:</td> 
+                                              <th> {{slot_info.firstname}} </th>
+                                      <tr></tr>                                               
+                                      <td class="sticky-header_slot">Lastname:</td>
+                                              <th> {{slot_info.firstname}} </th>
+                                      <tr></tr> 
+                                      <td class="sticky-header_slot">Licenceplate:</td>
+                                              <th> {{slot_info.licenceplate}} </th>
+                                      <tr></tr> 
+                                      <td class="sticky-header_slot">Storage slot:</td>
+                                              <th> {{slot_info.storage_slot}} </th>
+                                      <tr></tr> 
+                                      <td class="sticky-header_slot">Tire type:</td>
+                                              <th> {{slot_info.tiretype}} </th>
+                                      <tr></tr> 
+                                      <td class="sticky-header_slot">Condition:</td>
+                                              <th> {{slot_info.condition}} </th>
+                                      <tr></tr> 
+                                      <td class="sticky-header_slot">Delete</td>
+                                      <br>
+                                              <th>
+                                                      <form action='/deleteFromStorageSlot' method="POST">
+                                                              <button value="delete"><input type="hidden" type="submit" value={{slot_info.storage_slot}} name="delete"></input>X
+                                                              </button>
+                                                      <input hidden value={{storage_name}} name="storage_name"></input>
+                                                      </form>
+                                              </th>  
+                                 </table>
+                                      <form action="/close_storage" method="GET">
+                                              <button value="hide"><input type="hidden" type="submit" name="Hide" value="Hide">Hide</input></button>  
+                                      </form>   
+                                <div>
+                          {% endif %}                                    
+                        </div>
+                       </div>
+                 </div>
+
+
+        {% else %}
+       
+        {% endif %}  
+
+        <script>
+                let data = document.getElementsByClassName("company_name");         
+                company_name = (data[0].innerText).toUpperCase();                  
+                let x = document.getElementsByClassName("fix_name");
+                let temp_name = ''
+                for (let i = 0; i < x.length; i++) {
+                        temp_name = x[i].innerText
+                        x[i].innerText = temp_name.replace(company_name+'_','');
+        
+                      }            
+                </script>
+</body>
+<footer>
+
+</footer>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

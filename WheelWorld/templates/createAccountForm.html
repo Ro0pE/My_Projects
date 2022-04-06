@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<h1 class="neonText"> Welcome to the <span class="app-name">WheelWorld!</span> </h1>
+
+
+<div class="notification">
+    {% for category,message in get_flashed_messages(with_categories=true) %}
+    {% if category == 'succes' %}
+    <p type="succes"> {{ message }}</p>
+    {% else %}
+    <p type="error"> {{ message }}</p>
+    {% endif %}
+    {% endfor %}
+</div>
+
+<form action="/createAccount" method="POST">
+    <label> Company name </label>
+    <input type="text" name="company" minlength="3" maxlength="15">> </input>
+    <br>
+    <label> Password </label>
+    <input class="password1" type="password" name="password1" minlength="3" maxlength="15"> </input>
+    <br>
+    <label> Password again </label>
+    <input type="password" name="password2" minlength="3" maxlength="15"> </input>
+    <br>
+    <input class="createAccountButton" type="submit" value="Create account">
+</form>
+
+<a href="/loginForm"> <button class="loginButton"> -> Login page </button><a> 
