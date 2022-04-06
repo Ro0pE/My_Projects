@@ -1,0 +1,11 @@
+POST http://localhost:3001/maintenances
+Content-Type: application/json 
+Authorization: Bearer 
+
+{
+        "task": "Osta kaljaa ",
+        "when": "123"
+        
+
+}
+

@@ -1,0 +1,129 @@
+
+
+form p label {
+  display: block;
+  margin-right: 5252px; 
+  margin-left: 50px;
+  padding-top: 5px;
+  text-align: left;
+  font-size: 25px;
+
+  
+}
+
+
+form p input {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 22px;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  text-align: left;
+  vertical-align: top;
+  margin-left: 20px;
+}
+
+
+.renovationsPosition{
+  text-align: left;
+}
+
+.addRenovationForm {
+  background-color: rgb(173, 236, 245);
+  width: 100%;
+  height: 80%;
+  text-align: left;
+}
+.renovations {
+  background-color: rgb(73, 211, 192);
+  text-align: center;
+  margin-right: 15px;
+  
+}
+
+
+
+
+.textArea {
+  margin-left: 5px;
+  vertical-align: top;
+  text-align: left;
+  font-size: 22px;
+  width: 510px;
+  height: 150px;
+  box-sizing: border-box;
+  border: 2px solid rgb(70, 66, 66);
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+
+}
+
+.renovationsHeader {
+  margin-top: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 88px;
+  color:rgb(19, 130, 173);
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color:black;
+  background-color: rgb(173, 236, 245);
+  text-align: center;
+
+}
+.addRenovationsHeader {
+  width: 320px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+  color:rgb(0, 0, 0);
+  background-color: rgb(73, 211, 192);
+  text-align: left;
+
+}
+.addRenovationButton {
+  position:relative;
+  left: 1%;
+  top: 350px;
+  color:rgb(0, 0, 0);
+  background-color: rgb(53, 202, 23);
+  font-size: 25px;
+  border-radius: 0.5rem;
+  
+}
+.addRenovationButton:hover {
+  background-color: rgb(20, 241, 31);
+  color:rgb(251, 255, 0);
+}
+
+.calendarPostion {
+  position:relative;
+  bottom: 650px;
+  left:50%
+
+}
+
+
+.renovationList {
+  position: relative;
+  bottom: 320px;
+
+}
+
+.renovationListHeader {
+  margin-left: 10px;
+  width: 180px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:rgb(0, 0, 0);
+  font-size: 30px;
+  background-color: rgb(73, 211, 192);
+
+}
+
+
+
+
+
+
+
+
+
+
+

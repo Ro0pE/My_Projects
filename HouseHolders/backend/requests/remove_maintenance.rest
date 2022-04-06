@@ -1,0 +1,4 @@
+DELETE http://localhost:3001/maintenances/61f9320a3278504404780f1e
+Content-Type: application/json
+
+

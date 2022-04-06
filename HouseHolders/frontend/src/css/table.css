@@ -1,0 +1,380 @@
+table[name="renovations"] {
+    margin-left: 10px;
+  }
+
+  table[name="activeTasks"] {
+    margin-left: 20px;
+    margin-right: 20px;
+    
+
+  }  
+  table[name="completedTasks"] {
+    margin-left: 20px;
+    margin-right: 20px;
+    
+
+  }  
+
+
+table[name="thisYear"]{
+  margin-left: 20px;
+}
+table[name="total"]{
+  margin-left: 20px;
+}
+  
+  table[name="renovations"] th{
+    font-size: 22px;
+    color:rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: rgb(0, 0, 0)
+
+  }
+  table[name="renovations"] td {
+    font-size: 20px;
+    color:rgb(0, 0, 0);
+    border: 1px solid;
+    border-collapse: collapse;
+    background-color: rgb(73, 211, 192);  
+  }
+  
+  table[name="renovations"] tr {
+    font-size: 20px;
+    color:rgb(250, 249, 249);
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+  
+  }
+  table[name="total"] th{
+    font-size: 22px;
+    color:rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: rgb(0, 0, 0)
+  }
+  table[name="total"] td {
+    font-size: 20px;
+    color:rgb(0, 0, 0);
+    border: 1px solid;
+    border-collapse: collapse;
+    background-color: rgb(73, 211, 192);
+  }
+  table[name="total"] tr {
+    font-size: 20px;
+    color:rgb(250, 249, 249);
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+  
+  }
+  table[name="thisYear"] th{
+    font-size: 22px;
+    color:rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: rgb(0, 0, 0)
+  }
+  table[name="thisYear"] td {
+    font-size: 20px;
+    color:rgb(0, 0, 0);
+    border: 1px solid;
+    border-collapse: collapse;
+    background-color: rgb(73, 211, 192);
+  }
+  table[name="thisYear"] tr {
+    font-size: 20px;
+    color:rgb(250, 249, 249);
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+  
+  }
+
+
+  table[name="activeTasks"] th{
+    font-size: 18px;
+    color:rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: rgb(0, 0, 0)
+
+  }
+  table[name="activeTasks"] td {
+    font-size: 17px;
+    color:rgb(0, 0, 0);
+    border: 1px solid;
+    border-collapse: collapse;
+    background-color: rgb(73, 211, 192);
+  
+  
+  }
+  table[name="activeTasks"] tr {
+    font-size: 17px;
+    color:rgb(250, 249, 249);
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+  
+  }
+
+  table[name="renovations"] button:hover {
+    background-color: rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
+  }
+  
+  table[name="renovations"] tr:nth-child(even) {
+    background-color: rgb(73, 211, 192);
+  }
+  
+  table[name="renovations"] thead tr th[name="project"] {
+    width: 17%;
+  }
+  table[name="renovations"] thead tr th[name="details"] {
+    width: 7%;
+  }
+  table[name="renovations"] thead tr th[name="contractor"] {
+    width: 10%;
+  }
+  table[name="renovations"] thead tr th[name="costs"] {
+    width: 7%;
+  }
+  table[name="renovations"] thead tr th[name="date"] {
+    width: 7%;
+  }
+  table[name="renovations"] thead tr th[name="status"] {
+
+    width: 7%;
+  }
+  table[name="renovations"] thead tr th[name="markStatus"] {
+    width: 6%;
+  }
+  table[name="renovations"] thead tr th[name="delete"] {
+    width: 2%;
+  }
+
+  table[name="renovations"] tbody tr td {
+    text-align: center;
+  }
+  table[name="renovations"] tbody tr td[name="statusUndone"] {
+    background-color: rgb(241, 33, 33);
+    font-size: 17px;
+    font-weight: bold;
+  }
+  table[name="renovations"] tbody tr td[name="statusDone"] {
+    background-color: rgb(36, 212, 50);
+    font-size: 17px;
+    font-weight: bold;
+  }
+  
+  table[name="renovations"] tbody tr td button[name="details"] {
+    color: rgb(9, 122, 167);
+    background-color: black;
+    font-size: 17px;
+  }
+  table[name="renovations"] tbody tr td button[name="details"]:hover {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    font-size: 17px;
+  }
+  table[name="renovations"] tbody tr td button[name="hide"] {
+    color: rgb(9, 122, 167);
+    background-color: black;
+    font-size: 17px;
+  }
+  table[name="renovations"] tbody tr td button[name="hide"]:hover {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    font-size: 17px;
+  }
+  table[name="renovations"] tbody tr td button[name="undone"] {
+    color: rgb(226, 108, 29);
+    background-color: black;
+    font-size: 17px;
+  }
+  table[name="renovations"] tbody tr td button[name="undone"]:hover {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    font-size: 17px;
+  }
+  table[name="renovations"] tbody tr td button[name="done"] {
+    color: rgb(35, 219, 29);
+    background-color: black;
+    font-size: 17px;
+  }
+  table[name="renovations"] tbody tr td button[name="done"]:hover {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    font-size: 17px;
+  }
+  table[name="renovations"] tbody tr td button[name="delete"] {
+    color: rgb(248, 38, 38);
+    background-color: black;
+    font-size: 17px;
+    align-content: center;
+  }
+  table[name="renovations"] tbody tr td button[name="delete"]:hover {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    font-size: 17px;
+    align-content: center;
+  }
+
+
+  table[name="completedTasks"] th{
+    font-size: 20px;
+    color:rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: rgb(0, 0, 0)
+
+  }
+  table[name="completedTasks"] td {
+    font-size: 20x;
+    color:rgb(0, 0, 0);
+    border: 1px solid;
+    border-collapse: collapse;
+    background-color: rgb(73, 211, 192);
+  
+  
+  }
+  table[name="completedTasks"] tr {
+    font-size: 20px;
+    color:rgb(250, 249, 249);
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+  
+  }
+
+  table[name="completedTasks"] tbody tr td {
+    text-align: center;
+  }
+  
+  table[name="completedTasks"] thead tr th[name="task"] {
+      width:500px;
+  }
+  table[name="completedTasks"] thead tr th[name="lastTimeDone"] {
+    width: 200px;
+  }
+  table[name="completedTasks"] thead tr th[name="cost"] {
+    width: 100px;
+  }
+  table[name="completedTasks"] thead tr th[name="delete"] {
+    width: 2%;
+  }
+
+
+  table[name="completedTasks"] tbody tr td[name="number"] {
+    width: 100px;
+  }
+
+  
+
+  table[name="activeTasks"] tbody tr td {
+    text-align: center;
+  }
+
+  table[name="activeTasks"] thead tr th[name="number"] {
+    width:100px;
+}
+  table[name="activeTasks"] thead tr th[name="task"] {
+    width:200px;
+}
+table[name="activeTasks"] thead tr th[name="howOften"] {
+  width: 150px;
+}
+table[name="activeTasks"] thead tr th[name="lastTimeDone"] {
+  width:100px;
+}
+
+  table[name="activeTasks"] thead tr th[name="timeToDoTask"] {
+    width: 250px;
+
+  }
+table[name="activeTasks"] thead tr th[name="cost"] {
+  width: 100px;
+}
+table[name="activeTasks"] thead tr th[name="delete"] {
+  width: 300px;
+}
+table[name="activeTasks"] thead tr th[name="checkDone"] {
+  width: 100px;
+}
+table[name="activeTasks"] thead tr th[name="delete"] {
+  width: 50px;
+}
+table[name="activeTasks"] tbody tr td button[name="checkDone"] {
+    color: rgb(35, 219, 29);
+    background-color: black;
+    font-size: 17px;
+    align-content: center;
+    
+  }
+  table[name="activeTasks"] tbody tr td button[name="delete"] {
+    color: rgb(248, 38, 38);
+    background-color: black;
+    font-size: 17px;
+    align-content: center;
+  }
+
+
+  table[name="completedTasks"] tbody tr td button[name="delete"] {
+    color: rgb(248, 38, 38);
+    background-color: black;
+    font-size: 17px;
+    align-content: center;
+  }
+
+  table[name="total"] thead tr th[name="renovations"] {
+    width:300px;
+}
+table[name="total"] thead tr th[name="tasks"] {
+    width:300px;
+}
+table[name="total"] thead tr th[name="shopping"] {
+    width:300px;
+}
+table[name="total"] thead tr th[name="bills"] {
+    width:300px;
+}
+table[name="total"] thead tr th[name="totalMoneySpend"] {
+
+    width:300px;
+}
+
+table[name="thisYear"] thead tr th[name="renovationsThisYear"] {
+    width:300px;
+}
+table[name="thisYear"] thead tr th[name="maintenancesThisYear"] {
+    width:300px;
+}
+table[name="thisYear"] thead tr th[name="shoppingThisYear"] {
+    width:300px;
+}
+table[name="thisYear"] thead tr th[name="billsThisYear"] {
+    width:300px;
+}
+table[name="thisYear"] thead tr th[name="totalMoneySpendThisYear"] {
+    width:300px;
+}
+
+
+
+
+
+
+
+
+

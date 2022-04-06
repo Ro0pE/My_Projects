@@ -1,0 +1,25 @@
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+ul li a{
+  text-decoration: none;
+  background-color: #000;
+  color: rgb(173, 236, 245);
+  padding: 10px 20px;
+  font-weight: bold;
+  border-style: solid;
+}
+
+ul li a:hover{
+  background-color:rgb(19, 130, 173);
+  color: rgb(0, 0, 0);
+  border-style: solid;
+}
+
+.active{
+  background-color:rgb(19, 130, 173);
+  color: rgb(0, 0, 0);
+}

@@ -1,0 +1,7 @@
+PUT http://localhost:3001/renovations/60f7f163652ba210d4d2f13b
+Content-Type: application/json
+
+{
+    "status": false
+
+}

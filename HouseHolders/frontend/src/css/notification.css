@@ -1,0 +1,50 @@
+.errorNotification {
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(250, 48, 48);
+    text-align: center;
+    font-size: 25px;
+    line-height: 0.5;
+    overflow: hidden; 
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+  }
+
+  .succesNotification {
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(112, 250, 48);
+    text-align: center;
+    font-size: 25px;
+    line-height: 0.5;
+    overflow: hidden; 
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+
+  }
+
+  .confirmationNotification {
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 75, 214);
+    text-align: center;
+    font-size: 25px;
+    line-height: 0.5;
+    overflow: hidden; 
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+
+  }
+  

@@ -1,0 +1,32 @@
+.moneyHeader {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 88px;
+    color:rgb(19, 130, 173);
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color:black;
+    background-color: rgb(173, 236, 245);
+    text-align: center;
+    margin-top: 10px;
+}
+
+.totalHeader {
+    background-color: rgb(73, 211, 192);
+    width: 65px;
+    margin-left: 20px;
+}
+.thisYearHeader {
+    background-color: rgb(73, 211, 192);
+    width: 110px;
+    margin-left: 20px;
+}
+
+.taxRefundThisYearHeader {
+    background-color: rgb(73, 211, 192);
+    width: 220px;    
+    margin-left: 20px;
+}
+.taxRefundThisYearAmount {
+    margin-left: 20px;
+    font-size: 35px;
+    color:rgba(66, 146, 20, 0.692)
+}

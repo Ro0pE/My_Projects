@@ -1,0 +1,13 @@
+POST http://localhost:3001/renovations
+Content-Type: application/json
+
+{
+        "id": 4,
+        "project": "Nurmikon leikkuu",
+        "details": "Nurmikko ajetaan 40mm pituiseksi",
+        "company": "Itse",
+        "date": "2021-07-10",
+        "budget": 0
+
+}
+
