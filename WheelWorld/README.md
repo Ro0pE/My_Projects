@@ -2,7 +2,7 @@
 
 # Web application for tire storing system
 
-https://thewheelworld.herokuapp.com/
+https://wheelworld.herokuapp.com/
 
 Test user:
 
