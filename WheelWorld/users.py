@@ -9,7 +9,6 @@ def create_account_table():
     db.session.commit()
 
 def create_account():
-    print('test')
     company_name = request.form["company"]
     password1 = request.form["password1"]
     password2 = request.form["password2"]
@@ -58,8 +57,7 @@ def verify_user():
             return False
         else:
             hash_value = user.password
-            if check_password_hash(hash_value,password):
-                
+            if check_password_hash(hash_value,password):           
                 session["company"] = company
                 flash("Password correct" , "succes")
                 return True

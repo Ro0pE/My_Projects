@@ -134,7 +134,7 @@ def addTires():
     users.check_csrf()
     check = request.form["check"]
     if tires.add_tires_to_storage() is False:
-        if(check == "fix_storage_name"):
+        if check == "fix_storage_name":
             return redirect("/showStorages")
         return redirect("/")
     return redirect("/")
@@ -273,7 +273,7 @@ def show_storages():
     storage_name = request.form["show_storage"]
     session["storage_name"] = storage_name
     storage_information = storages.show_specific_storage(storage_name)
-    if (storage_information != 0):  
+    if storage_information != 0:  
         get_storage_information = []
         for row in storage_information:
             get_storage_information.append(dict(row))
@@ -286,7 +286,7 @@ def show_slot_info():
     storage_name = request.form["storage_name"]
     id = request.form["id"]
     storage_slot_info = storages.show_slot_info(id)
-    if (storage_slot_info is None):
+    if storage_slot_info is None:
         session["add_storage_name"] = storage_name
         session["add_slot_name"]  = slot_name
         return redirect("/")
@@ -307,9 +307,9 @@ def search():
     licenceplate = request.form["search_by_licenceplate"]
     licenceplate = licenceplate.upper()
     search_result = tires.search(licenceplate)
-    if (search_result is None):
+    if search_result is None:
         search_clients = clients.search(licenceplate)
-        if (search_clients is None):
+        if search_clients is None:
             flash("Client not found", "error_client")
             return redirect("/")
         client_result = []

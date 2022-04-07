@@ -67,17 +67,17 @@ def add_tires_to_storage():
                 result = data.fetchone()
                 db.session.commit()
                 if result is None:
-                    flash("Storage not found. Create a storage?", "error_storages")
+                    flash("Storage not found. Create a storage?", "error_tires")
                     return False
                 else:
                     sql_check_slot = "SELECT storage_slot FROM {} WHERE storage_slot='{}'".format(table_storage,storage_slot)   
                     data = db.session.execute(sql_check_slot)
                     result = data.fetchall()
                     if result == []:
-                        flash("Slot not found", "error_storages")
+                        flash("Slot not found", "error_tires")
                         return False           
             except:
-                flash("Storage doesn't exists", "error_storages")
+                flash("Storage doesn't exists", "error_tires")
                 return False
             sql_check_storage_slot = "SELECT status FROM {} WHERE storage_slot=:storage_slot".format(table_storage)
             check_data = db.session.execute(sql_check_storage_slot,{"storage_slot":storage_slot})
