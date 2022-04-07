@@ -1,5 +1,7 @@
 # WHEELWORLD
 
+# My project number #2
+
 # Web application for tire storing system
 
 https://wheelworld.herokuapp.com/
@@ -56,5 +58,5 @@ https://wheelworld.herokuapp.com/
 * Add a warning when deleting the storage that it will delete also everything inside of it.
 * Add more options for search.
 * Refactor code, get rid of boilerplate.
-* Refactor .css
+* Refactor .css and fix some UI issues
 * 
