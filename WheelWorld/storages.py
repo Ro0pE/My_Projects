@@ -24,6 +24,11 @@ def create_storage():
     storage_name = request.form["storagename"]
     storage_width = request.form["storagewidth"]
     storage_height = request.form["storageheight"]
+    print(storage_name)
+    if "Ö" in storage_name:
+        print('LÖYTYxxxxx')
+        flash("No öööö", "error_storages")
+        return False
     if storage_name == "":
         flash("Storage must have a name", "error_storages")
         return False
@@ -42,12 +47,17 @@ def create_storage():
     except:
         flash("Storage width and height must be a numbers")   
         return False
-    try:     
+    try:
+        if "ö" in storage_name or "ä" in storage_name or "å" in storage_name:
+            print("Error with special character")
+            flash("No special characters", "error_storages")
+            return False     
         sql_create_storage_slot = "CREATE TABLE {} (id SERIAL PRIMARY KEY, storage_slot TEXT UNIQUE, tire_id INTEGER REFERENCES {}, status BOOL, size TEXT)".format(session["company"]+"_"+storage_name, table_tires)
         db.session.execute(sql_create_storage_slot)
         db.session.commit()
         flash("Storage succesfully created!", "succes_storages")
     except:
+        print(error)
         flash("Storage name must be unique,", "error_storages")
         return False
     return True
@@ -58,6 +68,8 @@ def create_storage_slots():
     storage_name = storage_name.upper()
     storage_width = request.form["storagewidth"]
     storage_height = request.form["storageheight"]
+
+
     if storage_name == "":
         return False
     try:
@@ -125,12 +137,17 @@ def show_storage_info():
 def delete_storage(storage):
     table_tires = session["company"] + "_tires"
     table_storages = session["company"] + "_storages"
-    table_to_delete = storage  
+    table_to_delete = storage 
+    print('table ', table_to_delete)
+    if "Ö" in table_to_delete:
+        print('LÖYTY')
+
     try:
         sql_delete_storage = "DROP TABLE {}".format(table_to_delete)
         db.session.execute(sql_delete_storage)
         db.session.commit()
     except:   
+        print('error')
         return False
     try:
         sql_delete_storage_from_storages = "DELETE FROM {} where storage_name=:storage_name".format(table_storages)

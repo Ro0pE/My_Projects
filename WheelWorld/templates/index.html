@@ -30,23 +30,23 @@
             {% if message %}
                 {% for category,message in get_flashed_messages(with_categories=true) %}
                 {% if category == 'succes_client' %}
-                        <p type="succes"> {{ message }}</p>
+                        <p type="succes_clients"> {{ message }}</p>
                 {% elif category == 'error_client' %}
-                        <p type="error"> {{ message }}</p>
+                        <p type="error_clients"> {{ message }}</p>
                 {% endif %}
                 {% endfor %}   
                 {% for category,message in get_flashed_messages(with_categories=true) %}
                 {% if category == 'succes_storages' %}
-                        <p type="succes"> {{ message }}</p>
+                        <p type="succes_storages"> {{ message }}</p>
                 {% elif category == 'error_storages' %}
-                        <p type="error"> {{ message }}</p>
+                        <p type="error_storages"> {{ message }}</p>
                 {% endif %}
                 {% endfor %}
                 {% for category,message in get_flashed_messages(with_categories=true) %}
                 {% if category == 'succes_tires' %}
-                        <p type="succes"> {{ message }}</p>
+                        <p type="succes_tires"> {{ message }}</p>
                 {% elif category == 'error_tires' %}
-                        <p type="error"> {{ message }}</p>
+                        <p type="error_tires"> {{ message }}</p>
                 {% endif %}
                 {% endfor %}
         {% else %}          

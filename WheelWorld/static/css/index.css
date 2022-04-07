@@ -820,15 +820,78 @@ label{
 .uppercase {
     text-transform: uppercase;
 }
+p[type='error_tires']{
+  position: relative;
+  left:640px;
+  color: #b90000;
+  text-shadow:
+  0 0 10px rgb(148, 0, 0),
+  0 0 21px rgb(197, 35, 35),
+  0 0 24px rgb(218, 87, 87);
+  font-size: 28px;
+  max-width: 500px;
+}
 
-p[type='error']{
-    color: #b90000;
+p[type='error_clients']{
+  position: relative;
+  right:540px;
+  color: #b90000;
+  text-shadow:
+  0 0 10px rgb(148, 0, 0),
+  0 0 21px rgb(197, 35, 35),
+  0 0 24px rgb(218, 87, 87);
+  font-size: 28px;
+  max-width: 500px;
+}
+
+p[type='error_storages']{
+  color: #b90000;
+  text-shadow:
+  0 0 10px rgb(148, 0, 0),
+  0 0 21px rgb(197, 35, 35),
+  0 0 24px rgb(218, 87, 87);
+  font-size: 28px;
+  max-width: 500px;
+  }
+  p[type='succes_tires']{
+    position: relative;
+    left:640px;
+    color: #21c900;
     text-shadow:
-    0 0 10px rgb(1, 8, 2),
-    0 0 21px rgb(255, 255, 255);
-    font-size: 25px;
+    0 0 10px rgb(4, 134, 0),
+    0 0 21px rgb(68, 185, 14),
+    0 0 24px rgb(95, 201, 73);
+    font-size: 28px;
     max-width: 500px;
   }
+  
+  p[type='succes_clients']{
+    position: relative;
+    right:540px;
+    color: #21c900;
+    text-shadow:
+    0 0 10px rgb(4, 134, 0),
+    0 0 21px rgb(68, 185, 14),
+    0 0 24px rgb(95, 201, 73);
+    font-size: 28px;
+    max-width: 500px;
+  }
+  
+  p[type='succes_storages']{
+    color: #21c900;
+    text-shadow:
+    0 0 10px rgb(4, 134, 0),
+    0 0 21px rgb(68, 185, 14),
+    0 0 24px rgb(95, 201, 73);
+    font-size: 28px;
+    max-width: 500px;
+    }
+
+
+
+
+
+
   p[type='succes']{
     color: #00b90f;
     text-shadow:
