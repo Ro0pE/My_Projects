@@ -67,5 +67,13 @@ def delete_client(id):
     except:
         return False
     return True
-
-
+def search(licenceplate):
+    try:
+        table_clients = session["company"] + "_clients"
+        sql_search = "SELECT firstname, lastname, licenceplate FROM {} WHERE licenceplate=:licenceplate".format(table_clients)
+        data = db.session.execute(sql_search,{"licenceplate":licenceplate})
+        result = data.fetchone()
+        return result
+    except:
+        flash("Client not found", "error_clients")
+        return False

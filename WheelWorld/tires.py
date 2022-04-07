@@ -136,3 +136,17 @@ def sort_by(sort_by):
         return result
     except:
         return False
+def search(licenceplate):
+    table_clients = session["company"] + "_clients"
+    table_tires = session["company"] + "_tires"
+
+    try:
+        sql_search_by_plate = "SELECT c.firstname, c.lastname, t.tiretype, t.condition, t.storage_name, t.storage_slot FROM {} c, {} t WHERE t.id=(SELECT id FROM {} WHERE licenceplate=:licenceplate AND c.licenceplate=:licenceplate)".format(table_clients,table_tires,table_clients)
+        data = db.session.execute(sql_search_by_plate,{"licenceplate":licenceplate})
+        result = data.fetchone()
+        db.session.commit
+        return result
+    except:
+        print('failure')
+
+#SELECT c.firstname, c.lastname, t.tiretype, t.condition, t.storage_name, t.storage_slot FROM toyota_tires t, toyota_clients c  WHERE t.id=(SELECT id FROM toyota_clients WHERE licenceplate = 'KML-489') AND c.licenceplate = 'KML-489';

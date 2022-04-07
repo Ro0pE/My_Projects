@@ -136,7 +136,46 @@
                 <div class="tables">
                  <div class="clients">
                   <div class="clients_table">
-                   <h3 class="headers" > Client list</h3>          
+                   <h3 class="headers" > Client list</h3>
+                   <form action="/search" method="POST">
+                           <label>Licenceplate</label>
+                           <input type="text" style="text-transform:uppercase" name="search_by_licenceplate"> </input>
+                           <button type="submit"> Search </button>
+                </br> 
+                <div>
+                {% if search_plate != ""%}
+                <table border = 1>      
+                <td class="sticky-header">Firstname</td>
+                <td class="sticky-header">Lastname</td>
+                <td class="sticky-header">Tiretype</td>
+                <td class="sticky-header">Condition</td>
+                <td class="sticky-header">Storage name</td>
+                <td class="sticky-header">Storage slot</td> 
+                <tr></tr>
+                <th> {{search_plate[0]}}
+                <th> {{search_plate[1]}}
+                <th> {{search_plate[2]}}
+                <th> {{search_plate[3]}}
+                <th> {{search_plate[4]}}
+                <th> {{search_plate[5]}}
+                        {% endif%}
+                {% if search_client != ""%}
+                <table border = 1>        
+                <td class="sticky-header">Firstname</td>
+                <td class="sticky-header">Lastname</td>
+                <td class="sticky-header">Licenceplate</td>
+                <tr></tr>
+                <th> {{search_client[0]}}
+                <th> {{search_client[1]}}
+                <th> {{search_client[2]}}
+                        {% endif%}        
+    
+    
+
+                
+                   </form>  
+                </table>   
+        </div>     
                     <div class="table-scroll">
                          <table border = 1>
                          <form action="/sort_clients" method="GET">

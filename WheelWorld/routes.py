@@ -43,6 +43,19 @@ def index():
         add_storage_name = session["add_storage_name"]
     else:
         add_storage_name = ""    
+    if session.get("search_licenceplate"):
+        search_plate = session["search_licenceplate"]
+        print(search_plate)
+        del session["search_licenceplate"]
+    else:
+        search_plate = ""
+    if session.get("search_client"):
+        search_client = session["search_client"]
+        print(search_client)
+        del session["search_client"]
+    else:
+        search_client = ""    
+    
     if session.get("storage_slot_info"):
         slot_info = session["storage_slot_info"]
         del session["storage_slot_info"]
@@ -53,7 +66,10 @@ def index():
         del session["storage_name"]
     else:
         storage_name = None
-    return render_template("index.html", clients=get_clients, storages=get_storages, tires=get_tires, slot_info=slot_info, storage_name=storage_name, add_storage_name=add_storage_name, add_slot_name=add_slot_name, storage_info=storage_info) 
+
+    print('test ', search_plate)
+    return render_template("index.html", clients=get_clients, storages=get_storages, tires=get_tires, slot_info=slot_info,
+    storage_name=storage_name, add_storage_name=add_storage_name, add_slot_name=add_slot_name, storage_info=storage_info, search_plate=search_plate, search_client=search_client) 
 
 @app.route("/loginForm", methods=["GET"])   
 def showLoginForm():
@@ -284,6 +300,29 @@ def show_slot_info():
 @app.route("/close_storage", methods=["GET"])
 def close_storage():
     del session["get_storage_information"]
+    return redirect("/")
+
+@app.route("/search", methods=["POST"])
+def search():
+    licenceplate = request.form["search_by_licenceplate"]
+    licenceplate = licenceplate.upper()
+    search_result = tires.search(licenceplate)
+    if (search_result is None):
+        search_clients = clients.search(licenceplate)
+        if (search_clients is None):
+            flash("Client not found", "error_client")
+            return redirect("/")
+        client_result = []
+        for y in search_clients:
+            client_result.append(y)
+        session["search_client"] = client_result    
+        return redirect("/")
+    result = []
+    for x in search_result:
+        result.append(x)
+    company_name = session["company"]
+    result[4] = result[4].replace(company_name+"_","")  
+    session["search_licenceplate"] = result
     return redirect("/")
 
            
