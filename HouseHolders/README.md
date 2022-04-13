@@ -1,5 +1,11 @@
 # You can try this app here: https://householders.herokuapp.com/
 
+For testing:
+
+Username: Admin
+
+Password: xxx
+
 ## My project number #1
 
 ## instructions:
